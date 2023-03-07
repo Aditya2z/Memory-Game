@@ -90,8 +90,8 @@ grid.addEventListener('click', function (event) {
         return;
     }
         
-      moveCounter++;
-      display.innerHTML = `<p>Moves : ${moveCounter}<p>`;
+      moveCounter = moveCounter + 0.5;
+      display.innerHTML = `<p>Moves : ${Math.trunc(moveCounter)}<p>`;
 
     if (count < 2) {   
         count++
@@ -131,12 +131,3 @@ grid.addEventListener('click', function (event) {
 };
 
 main();
-
-
-
-
-
-
-
-
-
