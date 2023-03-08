@@ -71,8 +71,8 @@ function main() {
       finalMessage.classList.add("finalMessage");
 
       finalMessage.innerHTML = `<h1>Game Won!<h1>
-    <p>Time taken: ${timeSpent} <p>
-    <p>Moves taken: ${moveCounter} <p>`;
+      <p>Time taken: ${timeSpent} <p>
+      <p>Moves taken: ${moveCounter} <p>`;
 
       game.append(finalMessage);
     }
