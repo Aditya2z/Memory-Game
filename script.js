@@ -1,11 +1,9 @@
-
 function main() {
-
   var begin = Date.now();
 
-  const game = document.getElementById('game');
-  const grid = document.createElement('section');
-  grid.setAttribute('class', 'grid');
+  const game = document.getElementById("game");
+  const grid = document.createElement("section");
+  grid.setAttribute("class", "grid");
   game.appendChild(grid);
 
   let gameGrid = [];
@@ -17,52 +15,50 @@ function main() {
   game.append(display);
 
   gameGrid.forEach((item) => {
-    const card = document.createElement('div');
-    card.classList.add('card');
+    const card = document.createElement("div");
+    card.classList.add("card");
     card.dataset.name = item.name;
 
-    const front = document.createElement('div');
-    front.classList.add('front');
+    const front = document.createElement("div");
+    front.classList.add("front");
 
-    const back = document.createElement('div');
-    back.classList.add('back');
+    const back = document.createElement("div");
+    back.classList.add("back");
     back.style.backgroundImage = `url(${item.img})`;
 
     grid.appendChild(card);
     card.appendChild(front);
     card.appendChild(back);
-
-  })
-
+  });
 
   let count = 0;
-  let firstGuess = '';
-  let secondGuess = '';
+  let firstGuess = "";
+  let secondGuess = "";
   let previousTarget = null;
   let moveCounter = 0;
 
   const match = () => {
-    var selected = document.querySelectorAll('.selected');
+    var selected = document.querySelectorAll(".selected");
     selected.forEach((card) => {
-      card.classList.add('match');
-    })
-  }
+      card.classList.add("match");
+    });
+  };
 
   const resetGuesses = () => {
-    firstGuess = '';
-    secondGuess = '';
+    firstGuess = "";
+    secondGuess = "";
     count = 0;
 
-    var selected = document.querySelectorAll('.selected');
+    var selected = document.querySelectorAll(".selected");
     selected.forEach((card) => {
-      card.classList.remove('selected');
-    })
-  }
+      card.classList.remove("selected");
+    });
+  };
 
   function checkGameWon() {
     let allCards = Array.from(document.querySelectorAll(".card"));
 
-    if (allCards.every(card => card.classList.contains("match"))) {
+    if (allCards.every((card) => card.classList.contains("match"))) {
       game.innerHTML = "";
       var end = Date.now();
       var timeSpent = (end - begin) / 1000 + "secs";
@@ -78,14 +74,13 @@ function main() {
     }
   }
 
-  grid.addEventListener('click', function (event) {
-
+  grid.addEventListener("click", function (event) {
     let clicked = event.target;
     if (
-      clicked.nodeName === 'SECTION' ||
+      clicked.nodeName === "SECTION" ||
       clicked === previousTarget ||
-      clicked.parentNode.classList.contains('selected') ||
-      clicked.parentNode.classList.contains('match')
+      clicked.parentNode.classList.contains("selected") ||
+      clicked.parentNode.classList.contains("match")
     ) {
       return;
     }
@@ -94,16 +89,16 @@ function main() {
     display.innerHTML = `<p>Moves : ${Math.trunc(moveCounter)}<p>`;
 
     if (count < 2) {
-      count++
+      count++;
       if (count === 1) {
         firstGuess = clicked.parentNode.dataset.name;
-        clicked.parentNode.classList.add('selected');
+        clicked.parentNode.classList.add("selected");
       } else {
         secondGuess = clicked.parentNode.dataset.name;
-        clicked.parentNode.classList.add('selected');
+        clicked.parentNode.classList.add("selected");
       }
 
-      if (firstGuess !== '' && secondGuess !== '') {
+      if (firstGuess !== "" && secondGuess !== "") {
         let delay = 1000;
         if (firstGuess === secondGuess) {
           setTimeout(function () {
@@ -124,10 +119,7 @@ function main() {
     setTimeout(function () {
       checkGameWon();
     }, 1200);
-
-  })
-
-
-};
+  });
+}
 
 main();
