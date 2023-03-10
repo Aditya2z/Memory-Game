@@ -69,7 +69,7 @@ function main() {
 
       finalMessage.innerHTML = `<h1>Game Won!<h1>
       <p>Time taken: ${timeSpent} <p>
-      <p>Moves taken: ${moveCounter} <p>`;
+      <p>Moves taken: ${Math.floor(moveCounter)} <p>`;
 
       game.append(finalMessage);
     }
