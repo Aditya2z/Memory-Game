@@ -10,9 +10,9 @@ function main() {
   gameGrid = cardsArray.concat(cardsArray);
   gameGrid.sort(() => 0.5 - Math.random());
 
-  let display = document.createElement("div");
-  display.classList.add("display");
-  game.append(display);
+  let moveDisplay = document.createElement("div");
+  moveDisplay.classList.add("display");
+  game.append(moveDisplay);
 
   gameGrid.forEach((item) => {
     const card = document.createElement("div");
@@ -48,6 +48,7 @@ function main() {
     firstGuess = "";
     secondGuess = "";
     count = 0;
+    previousTarget = null;
 
     var selected = document.querySelectorAll(".selected");
     selected.forEach((card) => {
@@ -86,7 +87,7 @@ function main() {
     }
 
     moveCounter = moveCounter + 0.5;
-    display.innerHTML = `<p>Moves : ${Math.trunc(moveCounter)}<p>`;
+    moveDisplay.innerHTML = `<p>Moves : ${Math.trunc(moveCounter)}<p>`;
 
     if (count < 2) {
       count++;
