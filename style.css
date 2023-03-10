@@ -128,6 +128,13 @@ h1{
     right: 0rem;
     top: 1rem;
   }
+  .finalMessage {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #fab942;
+    text-align: center;
+    padding: 2rem;
+  }
 }
 @media screen and (max-width:300px) {
   .grid {
