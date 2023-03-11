@@ -120,8 +120,8 @@ h1{
   .card,
   .back,
   .front {
-    height: 80px;
-    width: 80px;
+    height: 100px;
+    width: 100px;
   }
   .display {
     position: absolute;
@@ -142,14 +142,14 @@ h1{
   }
 
   .grid {
-    max-width: 300px; 
+    max-width: 100%; 
   }
 
   .card,
   .back,
   .front {
-    height: 60px;
-    width: 60px;
+    height: 100px;
+    width: 100px;
   }
   .display {
     position: absolute;
