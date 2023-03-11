@@ -14,7 +14,7 @@ h1{
 }
 
 .grid {
-  max-width: 768px;
+  max-width: 600px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -46,8 +46,8 @@ h1{
 .card,
 .back,
 .front {
-  height: 150px;
-  width: 150px;
+  height: 125px;
+  width: 125px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
@@ -120,8 +120,36 @@ h1{
   .card,
   .back,
   .front {
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
+  }
+  .display {
+    position: absolute;
+    right: 0rem;
+    top: 1rem;
+  }
+  .finalMessage {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #fab942;
+    text-align: center;
+    padding: 2rem;
+  }
+}
+@media screen and (max-width:400px) {
+  html {
+    font-size: 14px;
+  }
+
+  .grid {
+    max-width: 300px; 
+  }
+
+  .card,
+  .back,
+  .front {
+    height: 60px;
+    width: 60px;
   }
   .display {
     position: absolute;
